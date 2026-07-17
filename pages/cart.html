@@ -13,11 +13,10 @@
       <nav aria-label="主要導覽">
         <a href="../index.html">首頁</a>
         <a href="restaurants.html">餐廳</a>
-        <a href="menu.html">菜單</a>
-        <a href="cart.html" aria-current="page">購物車</a>
+        <a href="cart.html" aria-current="page">購物車 <span data-cart-count>0</span></a>
         <a href="order-status.html">訂單狀態</a>
-        <a href="profile.html">會員資料</a>
-        <a href="contact.html">聯絡客服</a>
+        <a href="profile.html">會員中心</a>
+        <a href="contact.html">聯絡我們</a>
       </nav>
     </header>
     <main class="container">
@@ -92,12 +91,14 @@
       function updateCart() {
         const rows = cartList.querySelectorAll(".cart-row");
         let subtotal = 0;
+        let totalQty = 0;
 
         rows.forEach((row) => {
           const price = Number(row.dataset.price);
           const qty = Number(row.dataset.qty);
           const lineTotal = price * qty;
           subtotal += lineTotal;
+          totalQty += qty;
           row.querySelector(".qty-value").textContent = qty;
           row.querySelector(".cart-line-total").textContent = formatPrice(lineTotal);
         });
@@ -121,6 +122,10 @@
         document.getElementById("cart-empty").hidden = !isEmpty;
         document.getElementById("cart-summary").hidden = isEmpty;
         orderButton.disabled = isEmpty;
+
+        document.querySelectorAll("[data-cart-count]").forEach((element) => {
+          element.textContent = totalQty;
+        });
       }
 
       cartList.addEventListener("click", (event) => {
