@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星快餐饗宴 | Subway 精選</title>
+  <meta name="description" content="品嚐我們為您精選的頂級 Subway 美味餐點，包括義大利經典潛艇堡、百味牛肉丸及照燒烤雞潛艇堡套餐。一鍵加入購物車，即刻享受美味！">
+  
+  <!-- Google Fonts: Outfit for sleek modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/base.css">
+  
+  <!-- Lucide Icons for clean SVG iconography -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="subway">
+
+  <!-- Background Glow Orbs for visual richness -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo">
+          <i data-lucide="chef-hat"></i>
+        </div>
+        <div class="brand-text">
+          <h1>GOURMET <span>PAVILION</span></h1>
+          <p>星級速食・即享美味</p>
+        </div>
+      </div>
+      
+      <!-- Sticky/Floating Cart Button -->
+      <button class="cart-trigger" id="cartTrigger" aria-label="打開購物車">
+        <i data-lucide="shopping-basket"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="menu-container">
+    <!-- Hero / Intro -->
+    <section class="hero-section">
+      <h2>Subway 精選餐點</h2>
+      <p>搭配新鮮蔬菜與現烤麵包，為您特製新鮮又健康的潛艇堡美味。</p>
+    </section>
+
+    <!-- Filters Section (Navigating separate pages) -->
+    <section class="filter-section">
+      <nav class="filter-tabs" id="filterTabs">
+        <a href="menu.html" class="filter-tab" id="filter-all">
+          <i data-lucide="layout-grid"></i>全部
+        </a>
+        <a href="mcdonalds.html" class="filter-tab" id="filter-mcdonalds">
+          <span class="brand-dot mcd"></span>麥當勞
+        </a>
+        <a href="kfc.html" class="filter-tab" id="filter-kfc">
+          <span class="brand-dot kfc"></span>肯德基
+        </a>
+        <a href="subway.html" class="filter-tab active" id="filter-subway">
+          <span class="brand-dot subway"></span>Subway
+        </a>
+      </nav>
+    </section>
+
+    <!-- Meal Card Grid -->
+    <section class="meals-section">
+      <div class="meals-grid" id="mealsGrid">
+        <!-- Rendered dynamically by main.js -->
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>正在為您準備菜單...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sidebar Cart Drawer -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title">
+        <i data-lucide="shopping-cart"></i>
+        <h3>已選購餐點</h3>
+      </div>
+      <button class="cart-close" id="cartClose" aria-label="關閉購物車">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <!-- Cart Items list -->
+    <div class="cart-items" id="cartItems">
+      <!-- Rendered dynamically by main.js -->
+      <div class="empty-cart-state">
+        <i data-lucide="shopping-bag"></i>
+        <p>您的購物車空空如也</p>
+        <span>快去挑選好吃的餐點吧！</span>
+      </div>
+    </div>
+
+    <!-- Cart Footer with Total and Checkout -->
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span class="total-label">總計金額</span>
+        <span class="total-price" id="cartTotalPrice">NT$ 0</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn" disabled>
+        <span>前往結帳</span>
+        <i data-lucide="arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <p>© 2026 Gourmet Pavilion. 版權所有。所有商標均屬其各自所有者。</p>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="../js/app.js"></script>
+</body>
+</html>
