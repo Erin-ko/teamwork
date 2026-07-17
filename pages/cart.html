@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>校園外送｜購物車</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">校園外送</a>
+      <nav aria-label="主要導覽"><a href="menu.html">菜單</a><a href="order-status.html">訂單狀態</a><a href="../index.html">首頁</a></nav>
+    </header>
+    <main class="container">
+      <section class="page-heading"><p class="eyebrow">訂單確認</p><h1>購物車</h1><p class="muted">這是前台原型，不會真的送出訂單。</p></section>
+
+      <section class="cart-panel">
+        <h2>購物車摘要</h2>
+        <ul class="cart-list">
+          <li class="cart-row">
+            <div>
+              <span class="cart-item-name">招牌雞腿便當</span>
+              <p class="cart-item-meta">數量 x 1｜單價 NT$110</p>
+            </div>
+            <span class="cart-price">NT$110</span>
+          </li>
+          <li class="cart-row">
+            <div>
+              <span class="cart-item-name">珍珠奶茶（微糖少冰）</span>
+              <p class="cart-item-meta">數量 x 2｜單價 NT$50</p>
+            </div>
+            <span class="cart-price">NT$100</span>
+          </li>
+        </ul>
+
+        <div class="cart-summary">
+          <div><span>小計</span><span class="cart-price">NT$210</span></div>
+          <div><span>運費</span><span class="cart-price">NT$30</span></div>
+          <div class="cart-total"><span>總金額</span><span class="cart-price">NT$240</span></div>
+        </div>
+
+        <div class="cart-actions">
+          <button type="button" id="mock-order-button">模擬下單</button>
+          <p class="cart-order-message" id="mock-order-message" role="status"></p>
+        </div>
+      </section>
+    </main>
+    <footer>校園外送小組協作練習</footer><script src="../js/app.js"></script>
+    <script>
+      // 模擬下單：只顯示提示訊息，不會真的付款或送出資料。
+      document.getElementById("mock-order-button").addEventListener("click", () => {
+        document.getElementById("mock-order-message").textContent =
+          "已送出模擬訂單！可到「訂單狀態」頁查看進度（此為練習，不會真的付款）。";
+      });
+    </script>
+  </body>
+</html>

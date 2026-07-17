@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>校園外送｜聯絡我們</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <style>
+      .contact-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+        margin-bottom: 50px;
+      }
+      .contact-info-card, .feedback-form-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eef2f6;
+      }
+      .contact-info-card h2, .feedback-form-card h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: #1e293b;
+        border-bottom: 2px solid #eaf5f1;
+        padding-bottom: 10px;
+      }
+      .info-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px 0;
+      }
+      .info-list-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .info-list-item svg {
+        width: 20px;
+        height: 20px;
+        stroke: #2e7d61;
+        fill: none;
+        stroke-width: 2;
+        margin-top: 2px;
+      }
+      .info-list-text h4 {
+        margin: 0;
+        font-size: 14px;
+        color: #1e293b;
+      }
+      .info-list-text p {
+        margin: 4px 0 0 0;
+        font-size: 14px;
+        color: #64748b;
+      }
+      .faq-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .faq-item {
+        margin-bottom: 10px;
+      }
+      .faq-link {
+        display: block;
+        padding: 10px 14px;
+        background: #f8fafc;
+        border-radius: 8px;
+        color: #2e7d61;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        border: 1px solid #f1f5f9;
+        text-decoration: none;
+      }
+      .faq-link:hover {
+        background: #eaf5f1;
+        transform: translateX(4px);
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #475569;
+        margin-bottom: 6px;
+      }
+      .form-control {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #d7dee8;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        outline: none;
+        box-sizing: border-box;
+      }
+      .form-control:focus {
+        border-color: #2e7d61;
+        box-shadow: 0 0 0 3px rgba(46, 125, 97, 0.1);
+      }
+      .submit-btn {
+        width: 100%;
+        background: #2e7d61;
+        color: #ffffff;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.2s ease, transform 0.1s ease;
+      }
+      .submit-btn:hover {
+        background: #24634c;
+      }
+      .submit-btn:active {
+        transform: scale(0.98);
+      }
+      .success-alert {
+        display: none;
+        background: #eaf5f1;
+        border: 1px solid #a7d5c4;
+        color: #1e523f;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">校園外送</a>
+      <nav aria-label="主要導覽"><a href="profile.html">會員中心</a><a href="../index.html">首頁</a></nav>
+    </header>
+    <main class="container">
+      <section class="page-heading"><p class="eyebrow">需要協助嗎？</p><h1>聯絡我們</h1><p class="muted">使用模擬客服資訊，不要填入真實個人資料。</p></section>
+      <!-- 成員 6：完成聯絡資訊或一個不送出的意見表單。 -->
+      <div class="contact-layout">
+        <!-- 客服資訊 -->
+        <section class="contact-info-card">
+          <h2>客服聯絡資訊</h2>
+          <ul class="info-list">
+            <li class="info-list-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div class="info-list-text">
+                <h4>服務時間</h4>
+                <p>週一至週五：09:00 - 18:00 (週末與國定假日暫停服務)</p>
+              </div>
+            </li>
+            <li class="info-list-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div class="info-list-text">
+                <h4>電子信箱</h4>
+                <p>support@campus-delivery.edu.tw</p>
+              </div>
+            </li>
+            <li class="info-list-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <div class="info-list-text">
+                <h4>校內緊急專線</h4>
+                <p>(02) 2363-XXXX 分機 9999</p>
+              </div>
+            </li>
+          </ul>
+
+          <h2>常見問題 Quick Links</h2>
+          <ul class="faq-list">
+            <li class="faq-item"><a class="faq-link" href="#" onclick="alert('如何取消訂單？\n\n若店家尚未接單，您可以至訂單詳情點擊取消。若已接單，請聯繫客服處理。')">如何取消訂單？</a></li>
+            <li class="faq-item"><a class="faq-link" href="#" onclick="alert('外送範圍限制？\n\n目前僅提供校園內外送，送餐點包含所有教學大樓、宿舍區及校園廣場。')">外送範圍限制？</a></li>
+            <li class="faq-item"><a class="faq-link" href="#" onclick="alert('如何變更付款方式？\n\n在購物車結帳前，您可以在付款方式欄位切換為您已綁定的其他付款工具。')">如何變更付款方式？</a></li>
+          </ul>
+        </section>
+
+        <!-- 意見反饋表單 -->
+        <section class="feedback-form-card">
+          <h2>填寫意見表單</h2>
+          <div id="successAlert" class="success-alert">
+            ✓ 您的寶貴意見已成功送出！我們會盡快處理您的反饋。
+          </div>
+          <form id="feedbackForm">
+            <div class="form-group">
+              <label for="userName">您的姓名</label>
+              <input type="text" id="userName" class="form-control" placeholder="例如：王同學" required>
+            </div>
+            <div class="form-group">
+              <label for="userEmail">電子信箱</label>
+              <input type="email" id="userEmail" class="form-control" placeholder="例如：alex.wang@student.edu.tw" required>
+            </div>
+            <div class="form-group">
+              <label for="feedbackType">問題類型</label>
+              <select id="feedbackType" class="form-control" required>
+                <option value="">請選擇...</option>
+                <option value="delivery">外送問題</option>
+                <option value="restaurant">商家/餐點問題</option>
+                <option value="system">系統異常</option>
+                <option value="other">其他建議</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="feedbackMessage">意見詳情</label>
+              <textarea id="feedbackMessage" class="form-control" rows="4" placeholder="請描述您遇到的問題或建議..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">送出意見</button>
+          </form>
+        </section>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('feedbackForm');
+          const alertBox = document.getElementById('successAlert');
+          if (form && alertBox) {
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              alertBox.style.display = 'block';
+              form.reset();
+              alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              setTimeout(function() {
+                alertBox.style.display = 'none';
+              }, 5000);
+            });
+          }
+        });
+      </script>
+    </main>
+    <footer>校園外送小組協作練習</footer><script src="../js/app.js"></script>
+  </body>
+</html>
