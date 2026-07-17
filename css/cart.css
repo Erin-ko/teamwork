@@ -1,11 +1,5 @@
 /* 成員 4：購物車頁專屬樣式（feature/cart），避免修改共用 base.css */
 
-/* 標示導覽列目前所在頁面 */
-.site-header nav a[aria-current="page"] {
-  color: #2e7d61;
-  font-weight: 700;
-}
-
 .cart-panel {
   margin-bottom: 36px;
   padding: 24px;
