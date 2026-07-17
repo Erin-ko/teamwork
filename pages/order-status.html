@@ -4,52 +4,122 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>校園外送｜訂單狀態</title>
-    <link rel="stylesheet" href="base.css" />
+    <!-- CSS References -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/order-status.css" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="../index.html">校園外送</a>
-      <nav aria-label="主要導覽"><a href="cart.html">購物車</a><a href="profile.html">會員中心</a><a href="../index.html">首頁</a></nav>
+      <nav aria-label="主要導覽">
+        <a href="restaurants.html">餐廳</a>
+        <a href="menu.html">菜單</a>
+        <a href="cart.html">購物車</a>
+        <a href="profile.html">會員中心</a>
+        <a href="../index.html">首頁</a>
+      </nav>
     </header>
-    <main class="container">
-      <section class="page-heading"><p class="eyebrow">外送進度</p><h1>訂單狀態</h1><p class="muted">使用模擬資料呈現目前的配送進度。</p></section>
-      <section class="card">
-        <h2>目前進度</h2>
 
-        <div class="order-progress" aria-label="訂單進度">
+    <main class="container">
+      <section class="page-heading">
+        <p class="eyebrow">外送進度</p>
+        <h1>訂單狀態</h1>
+        <p class="muted">即時追蹤您的餐點外送狀態，或點擊步驟直接切換檢視。</p>
+      </section>
+
+      <!-- Progress Tracker Wrapper -->
+      <section class="card order-progress-container">
+        <h2>外送進度追蹤</h2>
+
+        <!-- Horizontal Stepper -->
+        <div class="order-progress" aria-label="訂單進度步驟">
           <div class="progress-track" aria-hidden="true">
             <div class="progress-fill" data-progress-fill></div>
           </div>
 
           <ul class="progress-steps" role="list">
-            <li class="step" data-step="0">
-              <div class="step-icon">1</div>
+            <li class="step" data-step="0" role="button" aria-label="步驟一：店家接單" tabindex="0">
+              <div class="step-icon">
+                <!-- Shop/Store Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path>
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                  <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path>
+                  <path d="M2 7h20"></path>
+                </svg>
+              </div>
               <div class="step-label">店家接單</div>
             </li>
-            <li class="step" data-step="1">
-              <div class="step-icon">2</div>
+            <li class="step" data-step="1" role="button" aria-label="步驟二：餐點製作中" tabindex="0">
+              <div class="step-icon">
+                <!-- Kitchen Cook/Hot Bowl Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v3m4-3v3M8 2v3"></path>
+                  <path d="M3 10h18a1 1 0 0 1 1 1v3a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8v-3a1 1 0 0 1 1-1z"></path>
+                </svg>
+              </div>
               <div class="step-label">餐點製作中</div>
             </li>
-            <li class="step" data-step="2">
-              <div class="step-icon">3</div>
+            <li class="step" data-step="2" role="button" aria-label="步驟三：外送途中" tabindex="0">
+              <div class="step-icon">
+                <!-- Scooter Delivery Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="6" cy="18" r="2"></circle>
+                  <circle cx="18" cy="18" r="2"></circle>
+                  <path d="M10 18h4l2-6h-7z"></path>
+                  <path d="M16 12h2.5l1.5 3H14"></path>
+                  <rect x="5" y="8" width="5" height="6" rx="1"></rect>
+                </svg>
+              </div>
               <div class="step-label">外送途中</div>
             </li>
-            <li class="step" data-step="3">
-              <div class="step-icon">4</div>
-              <div class="step-label">完成</div>
+            <li class="step" data-step="3" role="button" aria-label="步驟四：已送達" tabindex="0">
+              <div class="step-icon">
+                <!-- Package Check/Delivered Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m16 16 2 2 4-4"></path>
+                  <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"></path>
+                  <path d="M12 22V12"></path>
+                  <path d="m12 12 8.73-5M12 12 3.27 7"></path>
+                </svg>
+              </div>
+              <div class="step-label">已送達</div>
             </li>
           </ul>
         </div>
 
-        <p class="status-message" aria-live="polite" data-order-status-text>狀態：等待店家接單</p>
+        <!-- Visual Stage Area -->
+        <div class="status-visual-stage" id="status-visual-stage">
+          <!-- Dynamically populated by JS -->
+        </div>
 
-        <div class="controls" aria-hidden="false">
-          <button class="button" id="prev-step">上一步</button>
-          <button class="button" id="next-step">下一步</button>
-          <button class="button" id="simulate">模擬自動進度</button>
+        <!-- Accessibility Announcement Area -->
+        <div id="status-live-region" class="visually-hidden" aria-live="polite"></div>
+
+        <!-- Controls Card -->
+        <div class="controls-card" aria-hidden="false">
+          <div class="btn-group">
+            <button class="status-btn status-btn-secondary" id="prev-step" aria-label="返回上一個進度">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              上一步
+            </button>
+            <button class="status-btn status-btn-secondary" id="next-step" aria-label="進至下一個進度">
+              下一步
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+          <button class="status-btn status-btn-accent" id="simulate" aria-label="開始自動外送進度模擬">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            模擬自動進度
+          </button>
         </div>
       </section>
     </main>
-    <footer>校園外送小組協作練習</footer><script src="app.js"></script>
+
+    <footer>校園外送小組協作練習</footer>
+
+    <!-- Scripts -->
+    <script src="../js/app.js"></script>
+    <script src="../js/order-status.js"></script>
   </body>
 </html>

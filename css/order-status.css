@@ -1,0 +1,411 @@
+/* order-status.css */
+
+.order-progress-container {
+  margin: 24px 0;
+}
+
+.order-progress {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+.progress-track {
+  position: absolute;
+  top: 26px;
+  left: 40px;
+  right: 40px;
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(90deg, #2e7d61, #47b08d);
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-steps {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  cursor: pointer;
+  outline: none;
+}
+
+.step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #ced4da;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.step-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2px;
+  transition: transform 0.4s ease;
+}
+
+.step-label {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c757d;
+  transition: color 0.4s ease, font-weight 0.4s ease;
+  text-align: center;
+}
+
+/* Active State */
+.step.active .step-icon {
+  background: #ffffff;
+  border-color: #2e7d61;
+  color: #2e7d61;
+  box-shadow: 0 0 0 4px rgba(46, 125, 97, 0.15), 0 8px 16px rgba(46, 125, 97, 0.1);
+  transform: scale(1.1);
+}
+
+.step.active .step-icon svg {
+  transform: scale(1.1);
+}
+
+.step.active .step-label {
+  color: #2e7d61;
+  font-weight: 700;
+}
+
+/* Completed State */
+.step.completed .step-icon {
+  background: #2e7d61;
+  border-color: #2e7d61;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(46, 125, 97, 0.2);
+}
+
+.step.completed .step-label {
+  color: #2e7d61;
+  font-weight: 600;
+}
+
+/* Interactive Visual Stage */
+.status-visual-stage {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  margin-bottom: 30px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.visual-illustration-container {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.visual-illustration {
+  width: 100%;
+  height: 100%;
+  color: #2e7d61;
+}
+
+.status-detail {
+  max-width: 480px;
+}
+
+.status-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #212529;
+  margin: 0 0 8px 0;
+}
+
+.status-desc {
+  font-size: 15px;
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.status-eta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e8f5e9;
+  color: #2e7d61;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 30px;
+  margin-top: 16px;
+  box-shadow: 0 2px 8px rgba(46, 125, 97, 0.08);
+}
+
+.status-eta svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Controls Styling */
+.controls-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 10px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.status-btn {
+  margin-top: 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-btn-secondary {
+  background: #f1f3f5;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.status-btn-secondary:hover {
+  background: #e9ecef;
+  color: #212529;
+}
+
+.status-btn-primary {
+  background: #2e7d61;
+  color: #ffffff;
+}
+
+.status-btn-primary:hover {
+  background: #235e49;
+  box-shadow: 0 4px 12px rgba(46, 125, 97, 0.15);
+}
+
+.status-btn-accent {
+  background: #e8f5e9;
+  color: #2e7d61;
+  border: 1px dashed #2e7d61;
+}
+
+.status-btn-accent:hover {
+  background: #c8e6c9;
+}
+
+.status-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #e9ecef;
+  color: #adb5bd;
+  border-color: transparent;
+}
+
+/* Animations for Visuals */
+
+/* 1. Shop / Order Accepted Animations */
+@keyframes printer-paper {
+  0% { transform: translateY(-12px); opacity: 0; }
+  30% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bell-ring {
+  0%, 100% { transform: rotate(0); }
+  10%, 30%, 50% { transform: rotate(8deg); }
+  20%, 40% { transform: rotate(-8deg); }
+  60% { transform: rotate(0); }
+}
+
+.anim-printer-paper {
+  animation: printer-paper 3s infinite alternate ease-in-out;
+  transform-origin: top center;
+}
+
+.anim-bell {
+  animation: bell-ring 2s infinite ease-in-out;
+  transform-origin: top center;
+}
+
+/* 2. Kitchen / Cook Animations */
+@keyframes steam-rise {
+  0% { transform: translateY(8px); opacity: 0; stroke-dashoffset: 20; }
+  30% { opacity: 1; }
+  80% { opacity: 0.5; }
+  100% { transform: translateY(-16px); opacity: 0; stroke-dashoffset: 0; }
+}
+
+@keyframes pot-shake {
+  0%, 100% { transform: rotate(0) translateY(0); }
+  25% { transform: rotate(1deg) translateY(-1px); }
+  75% { transform: rotate(-1deg) translateY(0); }
+}
+
+.anim-steam-1 {
+  animation: steam-rise 2.5s infinite linear;
+}
+
+.anim-steam-2 {
+  animation: steam-rise 2.5s infinite linear 0.8s;
+}
+
+.anim-steam-3 {
+  animation: steam-rise 2.5s infinite linear 1.6s;
+}
+
+.anim-pot {
+  animation: pot-shake 0.4s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* 3. Delivery Scooter Animations */
+@keyframes scooter-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes wheel-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes speed-dash {
+  0% { transform: translateX(60px); opacity: 0; }
+  20% { opacity: 0.7; }
+  80% { opacity: 0.7; }
+  100% { transform: translateX(-60px); opacity: 0; }
+}
+
+.anim-scooter {
+  animation: scooter-bounce 0.3s infinite ease-in-out;
+}
+
+.anim-wheel {
+  animation: wheel-spin 0.8s infinite linear;
+  transform-origin: center;
+}
+
+.anim-dash-1 {
+  animation: speed-dash 1.2s infinite linear;
+}
+
+.anim-dash-2 {
+  animation: speed-dash 1.2s infinite linear 0.4s;
+}
+
+.anim-dash-3 {
+  animation: speed-dash 1.2s infinite linear 0.8s;
+}
+
+/* 4. Delivered Animations */
+@keyframes pin-drop {
+  0% { transform: translateY(-50px) scaleY(1.2); opacity: 0; }
+  60% { transform: translateY(0) scaleY(0.9); opacity: 1; }
+  75% { transform: translateY(-10px) scaleY(1.05); }
+  90% { transform: translateY(0) scaleY(0.95); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+@keyframes box-glow {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(46, 125, 97, 0.2)); }
+  50% { filter: drop-shadow(0 0 12px rgba(46, 125, 97, 0.6)); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.anim-pin {
+  animation: pin-drop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform-origin: bottom center;
+}
+
+.anim-box {
+  animation: box-glow 2.5s infinite ease-in-out;
+}
+
+.anim-ripple {
+  animation: ripple 2s infinite ease-out;
+  transform-origin: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .progress-track {
+    left: 30px;
+    right: 30px;
+  }
+  .step-icon {
+    width: 46px;
+    height: 46px;
+  }
+  .step-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .step-label {
+    font-size: 12px;
+  }
+  .status-visual-stage {
+    padding: 30px 16px;
+    min-height: 340px;
+  }
+  .visual-illustration-container {
+    width: 140px;
+    height: 140px;
+  }
+  .status-title {
+    font-size: 18px;
+  }
+  .status-desc {
+    font-size: 13px;
+  }
+}
