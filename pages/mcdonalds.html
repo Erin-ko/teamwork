@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>校園外送｜麥當勞菜單</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">校園外送</a>
+      <nav aria-label="主要導覽">
+        <a href="../index.html">首頁</a>
+        <a href="restaurants.html">餐廳</a>
+        <a href="cart.html">購物車 <span data-cart-count>0</span></a>
+        <a href="order-status.html">訂單狀態</a>
+        <a href="profile.html">會員中心</a>
+        <a href="contact.html">聯絡我們</a>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="page-heading">
+        <p class="eyebrow">餐廳菜單</p>
+        <h1>麥當勞 (McDonald's)</h1>
+        <p class="muted">美式速食・漢堡｜營業時間 07:00 - 23:00</p>
+        <a class="back-link" href="restaurants.html">← 回餐廳列表</a>
+      </section>
+
+      <nav class="menu-tabs" aria-label="切換餐廳菜單">
+        <a class="menu-tab" href="menu.html">全部菜單</a>
+        <a class="menu-tab active" href="mcdonalds.html" aria-current="page">麥當勞</a>
+        <a class="menu-tab" href="kfc.html">肯德基</a>
+        <a class="menu-tab" href="subway.html">Subway</a>
+      </nav>
+
+      <p class="status-message" data-status-message aria-live="polite"></p>
+
+      <section class="menu-grid" aria-label="麥當勞餐點列表">
+        <article class="menu-card">
+          <div class="menu-card-visual visual-mcd" aria-hidden="true">🍔</div>
+          <div class="menu-card-body">
+            <h3>大麥克經典套餐</h3>
+            <p>雙層純牛肉搭配特製醬料與生菜，附大薯和中杯飲料。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$139</span>
+              <button type="button" data-add-to-cart="大麥克經典套餐">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-visual visual-mcd" aria-hidden="true">🧀</div>
+          <div class="menu-card-body">
+            <h3>雙層牛肉吉事堡</h3>
+            <p>香濃吉事融化在兩層牛肉之間，經典不敗的組合。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$99</span>
+              <button type="button" data-add-to-cart="雙層牛肉吉事堡">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-visual visual-mcd" aria-hidden="true">🍗</div>
+          <div class="menu-card-body">
+            <h3>黃金麥脆鷄腿（2 塊）</h3>
+            <p>外皮金黃酥脆、肉質鮮嫩多汁，趁熱吃最過癮。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$115</span>
+              <button type="button" data-add-to-cart="黃金麥脆鷄腿（2 塊）">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-visual visual-mcd" aria-hidden="true">🐟</div>
+          <div class="menu-card-body">
+            <h3>經典麥香魚套餐</h3>
+            <p>酥炸鱈魚排與塔塔醬的清爽搭配，附中薯和中杯飲料。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$119</span>
+              <button type="button" data-add-to-cart="經典麥香魚套餐">加入購物車</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>校園外送小組協作練習</footer><script src="../js/app.js"></script>
+  </body>
+</html>

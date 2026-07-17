@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>校園外送｜購物車</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">校園外送</a>
+      <nav aria-label="主要導覽">
+        <a href="../index.html">首頁</a>
+        <a href="restaurants.html">餐廳</a>
+        <a href="cart.html" aria-current="page">購物車 <span data-cart-count>0</span></a>
+        <a href="order-status.html">訂單狀態</a>
+        <a href="profile.html">會員中心</a>
+        <a href="contact.html">聯絡我們</a>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="page-heading"><p class="eyebrow">訂單確認</p><h1>購物車</h1><p class="muted">這是前台原型，不會真的送出訂單。</p></section>
+
+      <section class="cart-panel">
+        <h2>購物車摘要</h2>
+
+        <ul class="cart-list" id="cart-list">
+          <li class="cart-row" data-name="招牌雞腿便當" data-price="110" data-qty="1">
+            <div>
+              <span class="cart-item-name">招牌雞腿便當</span>
+              <p class="cart-item-meta">單價 NT$110</p>
+            </div>
+            <div class="cart-qty">
+              <button type="button" class="qty-btn" data-action="decrease" aria-label="減少數量">−</button>
+              <span class="qty-value" aria-live="polite">1</span>
+              <button type="button" class="qty-btn" data-action="increase" aria-label="增加數量">＋</button>
+            </div>
+            <span class="cart-price cart-line-total">NT$110</span>
+            <button type="button" class="remove-btn" data-action="remove">移除</button>
+          </li>
+          <li class="cart-row" data-name="珍珠奶茶（微糖少冰）" data-price="50" data-qty="2">
+            <div>
+              <span class="cart-item-name">珍珠奶茶（微糖少冰）</span>
+              <p class="cart-item-meta">單價 NT$50</p>
+            </div>
+            <div class="cart-qty">
+              <button type="button" class="qty-btn" data-action="decrease" aria-label="減少數量">−</button>
+              <span class="qty-value" aria-live="polite">2</span>
+              <button type="button" class="qty-btn" data-action="increase" aria-label="增加數量">＋</button>
+            </div>
+            <span class="cart-price cart-line-total">NT$100</span>
+            <button type="button" class="remove-btn" data-action="remove">移除</button>
+          </li>
+        </ul>
+
+        <p class="cart-empty" id="cart-empty" hidden>
+          購物車是空的，快去 <a href="menu.html">菜單頁</a> 加點想吃的吧！
+        </p>
+
+        <p class="shipping-hint" id="shipping-hint"></p>
+
+        <div class="cart-summary" id="cart-summary">
+          <div><span>小計</span><span class="cart-price" id="subtotal">NT$210</span></div>
+          <div><span>運費</span><span class="cart-price" id="shipping">NT$30</span></div>
+          <div class="cart-total"><span>總金額</span><span class="cart-price" id="total">NT$240</span></div>
+        </div>
+
+        <div class="cart-actions">
+          <button type="button" id="mock-order-button">模擬下單</button>
+          <a class="button button-secondary" href="menu.html">繼續點餐</a>
+          <p class="cart-order-message" id="mock-order-message" role="status"></p>
+        </div>
+      </section>
+    </main>
+    <footer>校園外送小組協作練習</footer><script src="../js/app.js"></script>
+    <script>
+      // 購物車互動：數量加減、移除品項、即時計算金額與滿額免運。
+      // 這是前台原型，所有資料都在畫面上，不會真的付款或送出。
+      const FREE_SHIPPING_THRESHOLD = 300;
+      const SHIPPING_FEE = 30;
+
+      const cartList = document.getElementById("cart-list");
+      const orderButton = document.getElementById("mock-order-button");
+      const orderMessage = document.getElementById("mock-order-message");
+
+      function formatPrice(amount) {
+        return `NT$${amount}`;
+      }
+
+      function updateCart() {
+        const rows = cartList.querySelectorAll(".cart-row");
+        let subtotal = 0;
+        let totalQty = 0;
+
+        rows.forEach((row) => {
+          const price = Number(row.dataset.price);
+          const qty = Number(row.dataset.qty);
+          const lineTotal = price * qty;
+          subtotal += lineTotal;
+          totalQty += qty;
+          row.querySelector(".qty-value").textContent = qty;
+          row.querySelector(".cart-line-total").textContent = formatPrice(lineTotal);
+        });
+
+        const isEmpty = rows.length === 0;
+        const shipping = isEmpty || subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_FEE;
+
+        document.getElementById("subtotal").textContent = formatPrice(subtotal);
+        document.getElementById("shipping").textContent = shipping === 0 ? "免運" : formatPrice(shipping);
+        document.getElementById("total").textContent = formatPrice(subtotal + shipping);
+
+        const hint = document.getElementById("shipping-hint");
+        if (isEmpty) {
+          hint.textContent = "";
+        } else if (shipping === 0) {
+          hint.textContent = "已達 NT$300，本單免運費！";
+        } else {
+          hint.textContent = `再點 ${formatPrice(FREE_SHIPPING_THRESHOLD - subtotal)} 即可免運費。`;
+        }
+
+        document.getElementById("cart-empty").hidden = !isEmpty;
+        document.getElementById("cart-summary").hidden = isEmpty;
+        orderButton.disabled = isEmpty;
+
+        document.querySelectorAll("[data-cart-count]").forEach((element) => {
+          element.textContent = totalQty;
+        });
+      }
+
+      cartList.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-action]");
+        if (!button) return;
+
+        const row = button.closest(".cart-row");
+        const qty = Number(row.dataset.qty);
+        const action = button.dataset.action;
+
+        if (action === "increase") {
+          row.dataset.qty = qty + 1;
+        } else if (action === "decrease") {
+          if (qty <= 1) return;
+          row.dataset.qty = qty - 1;
+        } else if (action === "remove") {
+          row.remove();
+        }
+
+        orderMessage.innerHTML = "";
+        updateCart();
+      });
+
+      orderButton.addEventListener("click", () => {
+        const itemCount = cartList.querySelectorAll(".cart-row").length;
+        const total = document.getElementById("total").textContent;
+        orderMessage.innerHTML =
+          `已送出模擬訂單：共 ${itemCount} 項餐點，總金額 ${total}（此為練習，不會真的付款）。` +
+          `前往 <a href="order-status.html">訂單狀態</a> 查看進度 →`;
+      });
+
+      updateCart();
+    </script>
+  </body>
+</html>

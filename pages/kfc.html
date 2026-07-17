@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>校園外送｜肯德基菜單</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">校園外送</a>
+      <nav aria-label="主要導覽">
+        <a href="../index.html">首頁</a>
+        <a href="restaurants.html">餐廳</a>
+        <a href="cart.html">購物車 <span data-cart-count>0</span></a>
+        <a href="order-status.html">訂單狀態</a>
+        <a href="profile.html">會員中心</a>
+        <a href="contact.html">聯絡我們</a>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="page-heading">
+        <p class="eyebrow">餐廳菜單</p>
+        <h1>肯德基 (KFC)</h1>
+        <p class="muted">美式速食・炸雞｜營業時間 09:30 - 22:30</p>
+        <a class="back-link" href="restaurants.html">← 回餐廳列表</a>
+      </section>
+
+      <nav class="menu-tabs" aria-label="切換餐廳菜單">
+        <a class="menu-tab" href="menu.html">全部菜單</a>
+        <a class="menu-tab" href="mcdonalds.html">麥當勞</a>
+        <a class="menu-tab active" href="kfc.html" aria-current="page">肯德基</a>
+        <a class="menu-tab" href="subway.html">Subway</a>
+      </nav>
+
+      <p class="status-message" data-status-message aria-live="polite"></p>
+
+      <section class="menu-grid" aria-label="肯德基餐點列表">
+        <article class="menu-card">
+          <div class="menu-card-visual visual-kfc" aria-hidden="true">🍗</div>
+          <div class="menu-card-body">
+            <h3>咔啦脆雞原味雙拼</h3>
+            <p>兩塊經典咔啦脆雞，外酥內嫩、香辣夠味。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$129</span>
+              <button type="button" data-add-to-cart="咔啦脆雞原味雙拼">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-visual visual-kfc" aria-hidden="true">🌿</div>
+          <div class="menu-card-body">
+            <h3>香草紙包雞</h3>
+            <p>整塊嫩雞腿以香草醃製、紙包封烤，香氣濃郁不油膩。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$105</span>
+              <button type="button" data-add-to-cart="香草紙包雞">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-visual visual-kfc" aria-hidden="true">🍔</div>
+          <div class="menu-card-body">
+            <h3>咔啦雞腿堡套餐</h3>
+            <p>招牌咔啦雞腿堡，附香脆薯條和中杯飲料。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$149</span>
+              <button type="button" data-add-to-cart="咔啦雞腿堡套餐">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-visual visual-kfc" aria-hidden="true">🥧</div>
+          <div class="menu-card-body">
+            <h3>經典葡式蛋撻（2 入）</h3>
+            <p>層層酥皮與滑嫩內餡，出爐現烤的招牌甜點。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$66</span>
+              <button type="button" data-add-to-cart="經典葡式蛋撻（2 入）">加入購物車</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>校園外送小組協作練習</footer><script src="../js/app.js"></script>
+  </body>
+</html>

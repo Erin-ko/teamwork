@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>校園外送｜Subway 菜單</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">校園外送</a>
+      <nav aria-label="主要導覽">
+        <a href="../index.html">首頁</a>
+        <a href="restaurants.html">餐廳</a>
+        <a href="cart.html">購物車 <span data-cart-count>0</span></a>
+        <a href="order-status.html">訂單狀態</a>
+        <a href="profile.html">會員中心</a>
+        <a href="contact.html">聯絡我們</a>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="page-heading">
+        <p class="eyebrow">餐廳菜單</p>
+        <h1>Subway (沙百味)</h1>
+        <p class="muted">健康輕食・潛艇堡｜營業時間 08:30 - 21:30</p>
+        <a class="back-link" href="restaurants.html">← 回餐廳列表</a>
+      </section>
+
+      <nav class="menu-tabs" aria-label="切換餐廳菜單">
+        <a class="menu-tab" href="menu.html">全部菜單</a>
+        <a class="menu-tab" href="mcdonalds.html">麥當勞</a>
+        <a class="menu-tab" href="kfc.html">肯德基</a>
+        <a class="menu-tab active" href="subway.html" aria-current="page">Subway</a>
+      </nav>
+
+      <p class="status-message" data-status-message aria-live="polite"></p>
+
+      <section class="menu-grid" aria-label="Subway 餐點列表">
+        <article class="menu-card">
+          <div class="menu-card-visual visual-subway" aria-hidden="true">🥪</div>
+          <div class="menu-card-body">
+            <h3>義大利經典潛艇堡（6 吋）</h3>
+            <p>義式臘腸與火腿的經典組合，搭配新鮮蔬菜與現烤麵包。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$119</span>
+              <button type="button" data-add-to-cart="義大利經典潛艇堡（6 吋）">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-visual visual-subway" aria-hidden="true">🧆</div>
+          <div class="menu-card-body">
+            <h3>百味牛肉丸潛艇堡（6 吋）</h3>
+            <p>手工牛肉丸淋上濃郁番茄醬，再撒上香濃起司。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$125</span>
+              <button type="button" data-add-to-cart="百味牛肉丸潛艇堡（6 吋）">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-visual visual-subway" aria-hidden="true">🍗</div>
+          <div class="menu-card-body">
+            <h3>照燒烤雞潛艇堡（6 吋）</h3>
+            <p>嫩烤雞肉刷上香甜照燒醬，鹹甜滋味大人小孩都愛。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$135</span>
+              <button type="button" data-add-to-cart="照燒烤雞潛艇堡（6 吋）">加入購物車</button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-visual visual-subway" aria-hidden="true">🥗</div>
+          <div class="menu-card-body">
+            <h3>新鮮田園沙拉</h3>
+            <p>滿滿新鮮蔬菜自由搭配醬料，健康輕食無負擔。</p>
+            <div class="menu-card-footer">
+              <span class="menu-price">NT$99</span>
+              <button type="button" data-add-to-cart="新鮮田園沙拉">加入購物車</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>校園外送小組協作練習</footer><script src="../js/app.js"></script>
+  </body>
+</html>
