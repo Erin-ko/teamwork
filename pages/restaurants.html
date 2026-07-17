@@ -5,6 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>校園外送｜餐廳</title>
     <link rel="stylesheet" href="../css/base.css" />
+    <style>
+      .restaurant-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+      .restaurant-card {
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eef2f6;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .restaurant-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(46, 125, 97, 0.12);
+      }
+      .restaurant-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        background-color: #f1f3f5;
+      }
+      .restaurant-info {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      .restaurant-tag {
+        font-size: 12px;
+        font-weight: 700;
+        color: #2e7d61;
+        background: #eaf5f1;
+        padding: 4px 10px;
+        border-radius: 20px;
+        align-self: flex-start;
+        margin-bottom: 12px;
+      }
+      .restaurant-name {
+        font-size: 20px;
+        margin: 0 0 8px 0;
+        color: #1e293b;
+        font-weight: 700;
+      }
+      .restaurant-meta {
+        font-size: 14px;
+        color: #64748b;
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .restaurant-meta div {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .restaurant-meta svg {
+        width: 16px;
+        height: 16px;
+        stroke: #64748b;
+        fill: none;
+        stroke-width: 2;
+      }
+      .restaurant-desc {
+        font-size: 14px;
+        color: #64748b;
+        margin: 8px 0 0 0;
+        line-height: 1.5;
+      }
+      .restaurant-action {
+        margin-top: auto;
+      }
+      .restaurant-button {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        background: #2e7d61;
+        color: #ffffff;
+        font-weight: 600;
+        border-radius: 8px;
+        border: none;
+        transition: background 0.2s ease, transform 0.1s ease;
+        text-decoration: none;
+      }
+      .restaurant-button:hover {
+        background: #24634c;
+        transform: scale(1.02);
+      }
+      .restaurant-button:active {
+        transform: scale(0.98);
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -14,7 +114,64 @@
     <main class="container">
       <section class="page-heading"><p class="eyebrow">選擇餐廳</p><h1>附近餐廳</h1><p class="muted">選一間餐廳，再查看它的菜單。</p></section>
       <!-- 成員 2：將此區塊改為至少三張餐廳卡片。 -->
-      <section class="placeholder"><h2>餐廳列表</h2><p>待完成：新增餐廳名稱、類型、營業時間與前往菜單按鈕。</p></section>
+      <section class="restaurant-grid">
+        <!-- 麥當勞 -->
+        <article class="restaurant-card">
+          <img class="restaurant-image" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80" alt="麥當勞經典漢堡">
+          <div class="restaurant-info">
+            <span class="restaurant-tag">美式速食 · 漢堡</span>
+            <h2 class="restaurant-name">麥當勞 (McDonald's)</h2>
+            <div class="restaurant-meta">
+              <div>
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>營業時間: 07:00 - 23:00</span>
+              </div>
+              <p class="restaurant-desc">全球知名的速食品牌，經典大麥克、薯條與麥克鷄塊隨時滿足你的胃。</p>
+            </div>
+            <div class="restaurant-action">
+              <a class="restaurant-button" href="menu.html?restaurant=mcdonalds">瀏覽菜單</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 肯德基 -->
+        <article class="restaurant-card">
+          <img class="restaurant-image" src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=600&auto=format&fit=crop&q=80" alt="肯德基炸雞">
+          <div class="restaurant-info">
+            <span class="restaurant-tag">美式速食 · 炸雞</span>
+            <h2 class="restaurant-name">肯德基 (KFC)</h2>
+            <div class="restaurant-meta">
+              <div>
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>營業時間: 09:30 - 22:30</span>
+              </div>
+              <p class="restaurant-desc">酥脆多汁的咔啦脆雞、經典蛋撻與紙包雞，讓你吮指回味無窮。</p>
+            </div>
+            <div class="restaurant-action">
+              <a class="restaurant-button" href="menu.html?restaurant=kfc">瀏覽菜單</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Subway -->
+        <article class="restaurant-card">
+          <img class="restaurant-image" src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=600&auto=format&fit=crop&q=80" alt="Subway 潛艇堡">
+          <div class="restaurant-info">
+            <span class="restaurant-tag">健康輕食 · 潛艇堡</span>
+            <h2 class="restaurant-name">Subway (沙百味)</h2>
+            <div class="restaurant-meta">
+              <div>
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>營業時間: 08:30 - 21:30</span>
+              </div>
+              <p class="restaurant-desc">現點現做的新鮮潛艇堡，自由搭配麵包、蔬菜與醬料，健康無負擔。</p>
+            </div>
+            <div class="restaurant-action">
+              <a class="restaurant-button" href="menu.html?restaurant=subway">瀏覽菜單</a>
+            </div>
+          </div>
+        </article>
+      </section>
     </main>
     <footer>校園外送小組協作練習</footer><script src="../js/app.js"></script>
   </body>
