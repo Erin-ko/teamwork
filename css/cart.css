@@ -1,0 +1,74 @@
+/* 成員 4：購物車頁專屬樣式（feature/cart），避免修改共用 base.css */
+
+.cart-panel {
+  margin-bottom: 36px;
+  padding: 24px;
+  border: 1px solid #d7dee8;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.cart-panel h2 {
+  margin-top: 0;
+}
+
+.cart-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cart-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e6ebf2;
+}
+
+.cart-item-name {
+  font-weight: 700;
+}
+
+.cart-item-meta {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: #5d6b79;
+}
+
+.cart-price {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cart-summary {
+  margin: 16px 0 0;
+}
+
+.cart-summary div {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  color: #5d6b79;
+}
+
+.cart-summary .cart-total {
+  padding-top: 12px;
+  margin-top: 6px;
+  border-top: 2px solid #263545;
+  color: #263545;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cart-actions {
+  margin-top: 20px;
+}
+
+.cart-order-message {
+  min-height: 24px;
+  margin-top: 12px;
+  color: #2e7d61;
+  font-weight: 700;
+}
