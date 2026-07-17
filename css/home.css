@@ -1,0 +1,227 @@
+/* 首頁專屬樣式：沿用 base.css 的配色（#2e7d61 綠、#263545 深灰、#5d6b79 淺灰） */
+
+/* ---------- Hero 區 ---------- */
+
+.hero {
+  position: relative;
+}
+
+/* 柔和的綠色光暈背景，讓首屏更有層次 */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -80px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(46, 125, 97, 0.12) 0%,
+    rgba(46, 125, 97, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.hero .eyebrow {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid rgba(46, 125, 97, 0.3);
+  border-radius: 999px;
+  background: rgba(46, 125, 97, 0.08);
+}
+
+.hero h1 {
+  background: linear-gradient(105deg, #263545 55%, #2e7d61);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* 進場動畫：hero 內元素依序浮現 */
+.hero > * {
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.hero > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.hero > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.hero > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- 統計數字列 ---------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+  padding: 22px 24px;
+  border: 1px solid #d7dee8;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.stats .stat {
+  text-align: center;
+}
+
+.stats .stat strong {
+  display: block;
+  color: #2e7d61;
+  font-size: 30px;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats .stat span {
+  color: #5d6b79;
+  font-size: 14px;
+}
+
+/* ---------- 卡片互動 ---------- */
+
+#home-feature .card,
+#how-it-works .card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* 卡片頂端的綠色滑條，hover 時展開 */
+#home-feature .card::before,
+#how-it-works .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #2e7d61;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+#home-feature .card:hover,
+#how-it-works .card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(46, 125, 97, 0.45);
+  box-shadow: 0 14px 28px rgba(38, 53, 69, 0.1);
+}
+
+#home-feature .card:hover::before,
+#how-it-works .card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ---------- 使用步驟的編號徽章 ---------- */
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: rgba(46, 125, 97, 0.12);
+  color: #2e7d61;
+  font-size: 16px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#how-it-works .card:hover .step-num {
+  background: #2e7d61;
+  color: #fff;
+}
+
+/* ---------- 按鈕互動 ---------- */
+
+.hero .button,
+#how-it-works .button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.hero .button:hover,
+#how-it-works .button:hover {
+  transform: translateY(-2px);
+  background: #256b52;
+  box-shadow: 0 8px 18px rgba(46, 125, 97, 0.3);
+}
+
+.hero .button:active,
+#how-it-works .button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ---------- 捲動浮現（配合 js/home.js） ---------- */
+
+/* 只有在 JS 成功執行（html 加上 .has-js）時才隱藏初始狀態，避免 JS 失效時內容看不見 */
+.has-js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 同一區塊內的卡片依序出現 */
+.reveal.is-visible .card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.reveal.is-visible .card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.reveal.is-visible .card:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.has-js .reveal .card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.is-visible .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- 減少動態偏好 ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero > *,
+  .has-js .reveal,
+  .has-js .reveal .card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

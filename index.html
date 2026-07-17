@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>校園外送｜首頁</title>
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/home.css" />
   </head>
   <body>
     <header class="site-header">
@@ -22,18 +23,93 @@
       <section class="hero" aria-labelledby="page-title">
         <p class="eyebrow">校園限定服務</p>
         <h1 id="page-title">想吃什麼，送到你手上</h1>
-        <p>這是一個供小組協作練習使用的外送系統前台原型。</p>
+        <p>
+          「校園外送」是專為校園師生打造的餐點外送平台，整合校內與周邊合作餐廳，
+          讓你在宿舍、圖書館或系館，動動手指就能點餐，餐點直接送到指定取餐點。
+        </p>
         <a class="button" href="pages/restaurants.html">瀏覽餐廳</a>
       </section>
 
-      <!-- 成員 1：在這裡完成首頁與平台介紹功能。 -->
-      <section id="home-feature" class="placeholder" aria-labelledby="home-feature-title">
-        <h2 id="home-feature-title">平台介紹</h2>
-        <p>待完成：介紹校園外送的特色與使用流程。</p>
+      <section class="stats reveal" aria-label="平台服務數據">
+        <div class="stat">
+          <strong data-count-to="25" data-count-suffix="+">0</strong>
+          <span>合作餐廳</span>
+        </div>
+        <div class="stat">
+          <strong data-count-to="30" data-count-suffix=" 分">0</strong>
+          <span>平均送達時間</span>
+        </div>
+        <div class="stat">
+          <strong data-count-to="12" data-count-suffix=" 處">0</strong>
+          <span>校園取餐點</span>
+        </div>
+        <div class="stat">
+          <strong data-count-to="98" data-count-suffix="%">0</strong>
+          <span>準時送達率</span>
+        </div>
+      </section>
+
+      <!-- 成員 1：首頁與平台介紹。 -->
+      <section id="home-feature" class="reveal" aria-labelledby="home-feature-title">
+        <h2 id="home-feature-title">平台特色</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>🏫 校園專屬合作店家</h3>
+            <p class="muted">
+              嚴選校內美食街與周邊人氣餐廳，菜單與價格公開透明，不用出校門也能吃遍名店。
+            </p>
+          </article>
+          <article class="card">
+            <h3>🚲 快速送達取餐點</h3>
+            <p class="muted">
+              由熟悉校園的外送夥伴配送，平均 30 分鐘內送達宿舍、圖書館等指定取餐點。
+            </p>
+          </article>
+          <article class="card">
+            <h3>📦 訂單進度即時追蹤</h3>
+            <p class="muted">
+              從店家接單、餐點製作到外送途中，訂單狀態一目瞭然，抓準時間下樓取餐。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="reveal" aria-labelledby="how-it-works-title">
+        <h2 id="how-it-works-title">使用步驟</h2>
+        <div class="grid">
+          <article class="card">
+            <h3><span class="step-num">1</span>挑選餐廳</h3>
+            <p class="muted">
+              到<a href="pages/restaurants.html"><strong>餐廳列表</strong></a>瀏覽合作店家，依類型與營業時間挑選喜歡的餐廳。
+            </p>
+          </article>
+          <article class="card">
+            <h3><span class="step-num">2</span>加入購物車</h3>
+            <p class="muted">
+              在菜單頁選擇餐點並加入購物車，隨時調整品項與數量。
+            </p>
+          </article>
+          <article class="card">
+            <h3><span class="step-num">3</span>確認下單</h3>
+            <p class="muted">
+              到購物車確認品項、運費與總金額，送出訂單即完成點餐。
+            </p>
+          </article>
+          <article class="card">
+            <h3><span class="step-num">4</span>追蹤與取餐</h3>
+            <p class="muted">
+              在訂單狀態頁追蹤外送進度，餐點送達後至取餐點領取。
+            </p>
+          </article>
+        </div>
+        <p>
+          準備好了嗎？<a class="button" href="pages/restaurants.html">立即開始點餐</a>
+        </p>
       </section>
     </main>
 
     <footer>校園外送小組協作練習</footer>
     <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>
